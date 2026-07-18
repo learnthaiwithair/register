@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คอร์ส Audacity ขั้นพื้นฐาน - Learn Thai with Air (LTWA)</title>
+    <meta name="description" content="ยกระดับเสียงของคุณด้วยคอร์สสอน Audacity พื้นฐานสำหรับผู้เริ่มต้น ทำพอดแคสต์ บทเรียนเสียง และสื่อการสอนออนไลน์แบบมืออาชีพ">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Floating Blobs for Premium Aesthetic -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo-container" id="logo-trigger">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">LTWA <span class="logo-subtext">Studio</span></span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#why-choose-us" class="nav-link">ทำไมต้องเรียน</a>
+                <a href="#curriculum" class="nav-link">หลักสูตร</a>
+                <a href="#deliverables" class="nav-link">สิ่งที่จะได้รับ</a>
+                <a href="#testimonials" class="nav-link">รีวิวจากนักเรียน</a>
+                <a href="#faq" class="nav-link">คำถามที่พบบ่อย</a>
+            </nav>
+            <div class="header-cta">
+                <button class="btn btn-primary open-form-btn">สมัครเรียนเลย</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">🔥 คอร์สยอดนิยม • เปิดรับจำนวนจำกัด</div>
+                <h1 class="hero-title">สร้างพอดแคสต์และบทเรียนเสียงให้<span class="text-gradient">โปรด้วย Audacity</span></h1>
+                <p class="hero-subtitle">
+                    เรียนรู้ทักษะการบันทึกเสียง ตัดต่อเสียง ใส่ดนตรีประกอบ และการปรับปรุงคุณภาพเสียงขั้นพื้นฐาน เพื่อสร้างสรรค์เนื้อหาเสียงระดับมืออาชีพแบบจับมือทำ
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large open-form-btn">ลงทะเบียนตอนนี้</button>
+                    <a href="#curriculum" class="btn btn-secondary btn-large">ดูรายละเอียดหลักสูตร</a>
+                </div>
+                <div class="hero-trust">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="trust-text">ผู้เข้าเรียนประเมินความพึงพอใจเฉลี่ย 4.9/5</div>
+                </div>
+            </div>
+            <div class="hero-card-container">
+                <!-- Premium Glassmorphic Course Card -->
+                <div class="course-card-glass">
+                    <div class="course-badge">Live Training via Zoom</div>
+                    <h3 class="course-card-title">Basic Audacity</h3>
+                    <div class="course-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            <div class="meta-text">
+                                <span class="meta-label">ระยะเวลาเรียน</span>
+                                <span class="meta-value">3 ชั่วโมงเต็ม</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">👥</span>
+                            <div class="meta-text">
+                                <span class="meta-label">จำกัดจำนวน</span>
+                                <span class="meta-value">30 ที่นั่งเท่านั้น</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="card-divider">
+                    <div class="live-status">
+                        <div class="pulse-indicator"></div>
+                        <span class="status-message">เหลือเพียง <strong id="seats-counter" class="text-gold">8</strong> ที่นั่งสุดท้ายก่อนปิดรับสมัคร</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="price-old">฿999</div>
+                        <div class="price-new">฿333 <span class="price-currency">THB</span></div>
+                    </div>
+                    <button class="btn btn-primary btn-full open-form-btn">จองสิทธิ์ราคาโปรโมชั่น</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">เรียนรู้ทักษะที่สามารถนำไปใช้งานได้จริง</h2>
+                <p class="section-description">เรียนรู้กระบวนการผลิตเสียงอย่างครบวงจร ตั้งแต่เริ่มอัดเสียงไปจนถึงการส่งออกไฟล์คุณภาพสูง</p>
+            </div>
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3 class="feature-title">การอัดเสียง (Audio Recording)</h3>
+                    <p class="feature-desc">เรียนรู้วิธีตั้งค่าไมโครโฟนและการบันทึกเสียงให้มีระดับสัญญาณที่เหมาะสมและเสียงใสคมชัด</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">✂️</div>
+                    <h3 class="feature-title">การตัดต่อ (Audio Editing)</h3>
+                    <p class="feature-desc">เทคนิคการตัดท่อนที่พูดผิด ลมหายใจ หรือเสียงเดดแอร์ (Dead Air) ออกได้อย่างรวดเร็วและแนบเนียน</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3 class="feature-title">การใส่ดนตรี (Add Music)</h3>
+                    <p class="feature-desc">รู้วิธีการปรับเสียงดนตรีประกอบให้เบาลงเมื่อมีเสียงพูด (Ducking) และสร้างมิติเสียงที่น่าสนใจ</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h3 class="feature-title">ปรับแต่งคุณภาพเสียง (Sound Quality)</h3>
+                    <p class="feature-desc">เรียนรู้การใช้งาน Compressor, Equalizer (EQ) เพื่อจัดระเบียบโทนเสียงให้ฟังง่ายขึ้น</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3 class="feature-title">ส่งออกไฟล์ (Export MP3)</h3>
+                    <p class="feature-desc">เข้าใจบิตเรต (Bitrate) และการบันทึกแท็กข้อมูลเสียงเพื่ออัปโหลดขึ้นแพลตฟอร์มต่าง ๆ</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+                    <h3 class="feature-title">ทำพอดแคสต์ (Podcast)</h3>
+                    <p class="feature-desc">รวบรวมทักษะทั้งหมดเพื่อสร้างสรรค์รายการพอดแคสต์และบทเรียนเสียงพร้อมใช้งานจริง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Curriculum Section -->
+    <section id="curriculum" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Curriculum</span>
+                <h2 class="section-title">เนื้อหาหลักสูตรการเรียน</h2>
+                <p class="section-description">6 โมดูลที่จะเปลี่ยนคุณจากผู้เริ่มต้น สู่คนผลิตสื่อเสียงอย่างมั่นใจ</p>
+            </div>
+            <div class="timeline-container">
+                <!-- Module 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Module 1: Introduction</h3>
+                        <p class="timeline-desc">ทำความรู้จักหน้าต่างโปรแกรม Audacity เครื่องมือต่าง ๆ และโครงสร้างระบบเสียงเบื้องต้น</p>
+                    </div>
+                </div>
+                <!-- Module 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Module 2: Recording</h3>
+                        <p class="timeline-desc">การตั้งค่า Input/Output อุปกรณ์ไมโครโฟน และเทคนิคการอัดเสียงพูดให้ชัดเจนไร้สัญญาณรบกวน</p>
+                    </div>
+                </div>
+                <!-- Module 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Module 3: Editing</h3>
+                        <p class="timeline-desc">การจัดการกับ Track, การลบเสียงรบกวน, การตัดต่อท่อนที่ไม่ต้องการออก และจัดลำดับเวลาเสียง</p>
+                    </div>
+                </div>
+                <!-- Module 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Module 4: Noise Reduction</h3>
+                        <p class="timeline-desc">เจาะลึกฟีเจอร์เด่นในการลดเสียงฮัม เสียงจี่ และลดเสียงรบกวนฉากหลัง (Ambient Noise) อย่างเป็นธรรมชาติ</p>
+                    </div>
+                </div>
+                <!-- Module 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Module 5: Effects & Mixing</h3>
+                        <p class="timeline-desc">การแต่งเสียงด้วย EQ, Compressor และเทคนิคการมิกซ์เพลงประกอบกับเสียงบรรยายให้น่าติดตาม</p>
+                    </div>
+                </div>
+                <!-- Module 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">06</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Module 6: Export & Metadata</h3>
+                        <p class="timeline-desc">วิธีการ Export ไฟล์ในฟอร์แมตต่าง ๆ เช่น MP3, WAV และการกรอก Metadata Tag ก่อนนำไปเผยแพร่</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables & For Whom Section -->
+    <section id="deliverables" class="section">
+        <div class="container deliverables-layout">
+            <div class="deliverables-content">
+                <div class="section-header align-left">
+                    <span class="section-badge">Deliverables</span>
+                    <h2 class="section-title">สิ่งที่คุณจะได้รับในคอร์สนี้</h2>
+                    <p class="section-description">เรียนจบพร้อมรับเครื่องมือและสิทธิพิเศษเพิ่มเติมสำหรับผู้เรียนโดยเฉพาะ</p>
+                </div>
+                <ul class="deliverables-list">
+                    <li><span class="check-icon">✓</span> วิดีโอบทเรียนบันทึกย้อนหลัง (ทบทวนได้ตลอดชีวิต)</li>
+                    <li><span class="check-icon">✓</span> คู่มือประกอบการเรียน PDF Handbook สรุปย่ออ่านเข้าใจง่าย</li>
+                    <li><span class="check-icon">✓</span> ไฟล์ฝึกหัด (Practice Files) สำหรับใช้ทำตามในห้องเรียน</li>
+                    <li><span class="check-icon">✓</span> การบ้านและฟีดแบ็กแนะนำรายบุคคลจากผู้สอน</li>
+                    <li><span class="check-icon">✓</span> เกียรติบัตรรับรองการสำเร็จหลักสูตร (Certificate)</li>
+                    <li><span class="check-icon">✓</span> สิทธิ์การเข้ากลุ่มผู้เรียนพิเศษเพื่อปรึกษาและแลกเปลี่ยนความรู้</li>
+                </ul>
+            </div>
+            <div class="target-group-container">
+                <div class="glass-box">
+                    <h3 class="box-title">คอร์สนี้เหมาะสำหรับใคร?</h3>
+                    <div class="target-grid">
+                        <div class="target-item">👩‍🏫 คุณครู / อาจารย์ที่ต้องการทำสื่อการสอนเสียง</div>
+                        <div class="target-item">🎙️ ผู้ที่อยากทำรายการพอดแคสต์ของตนเอง</div>
+                        <div class="target-item">🎥 YouTuber / Content Creator ที่ทำงานด้านวิดีโอและเสียง</div>
+                        <div class="target-item">💻 ผู้เริ่มต้นพัฒนาทักษะการทำงานกับเสียง</div>
+                        <div class="target-item">🎓 นักเรียน นักศึกษา ที่ใช้ทำงานนำเสนอ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Reviews</span>
+                <h2 class="section-title">เสียงตอบรับจากนักเรียนของเรา</h2>
+                <p class="section-description">รีวิวส่วนหนึ่งจากผู้เข้าร่วมอบรมในรุ่นที่ผ่านมา</p>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-nav prev" aria-label="รีวิวก่อนหน้า">‹</button>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Review 1 -->
+                        <div class="carousel-slide">
+                            <div class="review-card">
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                <p class="review-text">"สอนดีมากค่ะ เข้าใจง่ายมาก จากที่ทำเสียงก้องๆ จี่ๆ แก้ไม่เคยเป็นเลย พอเรียนคอร์สนี้ตอนนี้สามารถทำพอดแคสต์เสียงใสๆ ลง Spotify ได้เองแล้วค่ะ คุ้มค่ามากๆ"</p>
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">👩</div>
+                                    <div class="reviewer-details">
+                                        <span class="reviewer-name">คุณนัทธมน (ครูสอนภาษาอังกฤษ)</span>
+                                        <span class="reviewer-role">ผู้เรียนรุ่นที่ 1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="carousel-slide">
+                            <div class="review-card">
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                <p class="review-text">"เนื้อหากระชับ ตอบโจทย์คนเริ่มต้นจริงๆ ครับ วิทยากรใจดี ค่อยๆ สอนไปทีละสเต็ป ไม่มีพื้นฐานด้านโปรแกรมมิกซ์เสียงมาก่อนก็ทำตามได้ไม่ยากเลย"</p>
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">👨</div>
+                                    <div class="reviewer-details">
+                                        <span class="reviewer-name">คุณธวัชชัย (ผู้ก่อตั้งพอดแคสต์)</span>
+                                        <span class="reviewer-role">ผู้เรียนรุ่นที่ 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="carousel-slide">
+                            <div class="review-card">
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                                <p class="review-text">"ได้รับเกียรติบัตรและคู่มือสวยงามมากค่ะ เอาไปแปะพอร์ตได้ มีวิดีโอย้อนหลังให้ดูซ้ำด้วย ทำคลิปบทเรียนสอนนักเรียนเสียงชัดแจ๋วเลยค่ะ"</p>
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">👩</div>
+                                    <div class="reviewer-details">
+                                        <span class="reviewer-name">ครูรัตนา (ข้าราชการครู)</span>
+                                        <span class="reviewer-role">ผู้เรียนรุ่นที่ 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav next" aria-label="รีวิวจนถัดไป">›</button>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+    </section>
+
+    <!-- Pricing / Big CTA Section -->
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="pricing-card">
+                <div class="pricing-badge">ข้อเสนอพิเศษจำกัดเวลา</div>
+                <h2 class="pricing-title">สมัครเข้าร่วมคอร์ส Basic Audacity วันนี้</h2>
+                <p class="pricing-desc">ยกระดับคุณภาพเสียงของคุณ สู่ผู้สร้างสื่อระดับมืออาชีพ</p>
+                <div class="pricing-deal">
+                    <div class="pricing-value-old">ราคาปกติ ฿999</div>
+                    <div class="pricing-value-new">฿333 <span class="pricing-thb">บาท</span></div>
+                </div>
+                <button class="btn btn-primary btn-large btn-glow open-form-btn">ลงทะเบียนวันนี้เลย</button>
+                <div class="pricing-footer">
+                    <span>🛡️ รับประกันความพึงพอใจการันตีความรู้ใช้ได้จริง</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container faq-container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">คำถามที่พบบ่อย</h2>
+                <p class="section-description">เราได้รวบรวมคำถามที่ผู้สมัครมักจะสงสัยบ่อยที่สุดไว้ที่นี่</p>
+            </div>
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>จำเป็นต้องมีพื้นฐานการตัดต่อมาก่อนหรือไม่?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ไม่ต้องมีพื้นฐานมาก่อนเลยครับ คอร์สนี้ออกแบบขึ้นมาสำหรับผู้เริ่มต้นอย่างแท้จริง เราจะสอนการดาวน์โหลด การติดตั้งเครื่องมือ และการใช้ฟังก์ชันที่สำคัญต่างๆ แบบทีละขั้นตอนอย่างละเอียดครับ</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ถ้าเรียนสดเสร็จแล้ว จะสามารถกลับมาดูย้อนหลังได้ไหม?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ได้แน่นอนครับ! เรามีการบันทึกเทปวิดีโอระหว่างการสอนสดทาง Zoom และจะจัดส่งลิงก์วิดีโอให้ย้อนดูได้ตลอดชีวิตหลังจากจบการเรียนการสอน</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>โปรแกรม Audacity รองรับอุปกรณ์ระบบปฏิบัติการใดบ้าง?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>โปรแกรม Audacity เป็นโปรแกรมใช้งานได้ฟรีอย่างสมบูรณ์แบบ รองรับทั้งระบบปฏิบัติการ Windows, macOS และ Linux ครับ ในห้องเรียนเราจะแนะนำวิธีการตั้งค่าที่ครอบคลุมทุกระบบครับ</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>การชำระเงินค่าสมัครทำอย่างไร?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>สามารถโอนชำระเงินค่าสมัคร 333 บาทมายังบัญชีธนาคารของทางระบบ (ข้อมูลในแบบฟอร์มลงทะเบียน) และนำรูปภาพสลิปใบเสร็จการโอนมาอัปโหลดแนบในระบบลงทะเบียนเพื่อยื่นยันสิทธิ์ได้เลยครับ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p class="footer-copy">&copy; 2026 Learn Thai with Air (LTWA). All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/learnthaiwithair/register/settings/pages" target="_blank">ตั้งค่า GitHub Pages</a>
+                <span style="margin: 0 10px; color: var(--text-muted); opacity: 0.4;">|</span>
+                <a href="#" id="admin-trigger">แผงควบคุมระบบ (Admin Panel)</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Form Modal -->
+    <div id="registration-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" id="close-modal-btn">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">สมัครเรียน Basic Audacity</h3>
+                <p class="modal-subtitle">กรอกข้อมูลและแนบสลิปเพื่อสำรองที่นั่งเรียน (ราคาโปรโมชั่น ฿333)</p>
+            </div>
+            
+            <!-- Step 1: Form Fill -->
+            <form id="registration-form" class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">ชื่อจริง <span class="required">*</span></label>
+                        <input type="text" id="first-name" name="firstName" required placeholder="สมชาย">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">นามสกุล <span class="required">*</span></label>
+                        <input type="text" id="last-name" name="lastName" required placeholder="ใจดี">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">อีเมล <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="somchai@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์ <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="0891234567" pattern="[0-9]{9,10}">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="line-id">LINE ID <span class="required">*</span></label>
+                        <input type="text" id="line-id" name="lineId" required placeholder="somchai.line">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">ประเทศที่พำนักอยู่ <span class="required">*</span></label>
+                        <input type="text" id="country" name="country" required placeholder="ประเทศไทย">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="learning-goals">เป้าหมายในการเรียนครั้งนี้ <span class="required">*</span></label>
+                    <textarea id="learning-goals" name="learningGoals" rows="3" required placeholder="เช่น อยากทำพอดแคสต์ของตัวเอง, อัดเสียงสื่อการสอน..."></textarea>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="payment-info-box">
+                    <h4 class="payment-box-title">ข้อมูลการโอนชำระเงิน</h4>
+                    <p>ธนาคารไทยพาณิชย์ (SCB)<br>
+                    ออมทรัพย์ สาขาเซ็นทรัลพลาซา แจ้งวัฒนะ<br>
+                    เลขบัญชี: <strong>401-9-32471-2</strong><br>
+                    ชื่อบัญชี: <strong>กัลป์ปภัส โอภาสยาภิรมย์</strong></p>
+                    <p class="payment-amount-alert">ยอดโอนชำระโปรโมชั่น: <strong>333.- บาท</strong></p>
+                </div>
+
+                <!-- File Upload Drag and Drop -->
+                <div class="form-group">
+                    <label>อัปโหลดสลิปหลักฐานการโอนเงิน <span class="required">*</span></label>
+                    <div class="drag-drop-area" id="drag-drop-area">
+                        <input type="file" id="slip-upload" name="slip" accept="image/*" required class="file-input-hidden">
+                        <div class="upload-content">
+                            <span class="upload-icon">📤</span>
+                            <p class="upload-text">คลิกเพื่อเลือกไฟล์ หรือลากสลิปมาวางตรงนี้</p>
+                            <p class="upload-subtext">รองรับไฟล์ภาพ JPG, PNG ขนาดไม่เกิน 5MB</p>
+                        </div>
+                        <div class="preview-area" id="slip-preview-container" style="display:none;">
+                            <img id="slip-preview-img" src="" alt="Slip Preview" class="slip-preview-img">
+                            <button type="button" class="btn-remove-file" id="btn-remove-file">ลบไฟล์นี้</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full btn-large">ยืนยันการสมัครและส่งเอกสาร</button>
+            </form>
+
+            <!-- Step 2: Success Message (Initially Hidden) -->
+            <div id="success-screen" class="success-screen" style="display: none;">
+                <div class="success-icon">🎉</div>
+                <h3 class="success-title">ส่งข้อมูลสมัครเรียบร้อยแล้ว!</h3>
+                <p class="success-message">ขอบคุณสำหรับการลงทะเบียนเรียนคอร์ส Basic Audacity ทางเราได้รับหลักฐานการสมัครของท่านเรียบร้อยแล้ว เจ้าหน้าที่จะดำเนินการตรวจสอบข้อมูลและแจ้งผลการยืนยันให้ท่านทราบผ่านทาง LINE ID หรืออีเมลที่ลงทะเบียนไว้ภายใน 24 ชั่วโมงครับ</p>
+                <div class="success-next-steps">
+                    <h4>ขั้นตอนถัดไป:</h4>
+                    <p>1. แอดไลน์ทีมงานเพื่อรับลิงก์เข้ากลุ่มผู้เรียนล่วงหน้า: <strong>@ltwa_support</strong></p>
+                    <p>2. เตรียมเครื่องคอมพิวเตอร์และโปรแกรม Audacity ให้พร้อมเรียน</p>
+                </div>
+                <button class="btn btn-secondary btn-full" id="success-close-btn">ปิดหน้านี้</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Submissions Viewer (Admin Panel) -->
+    <div id="admin-modal" class="modal-overlay">
+        <div class="modal-card modal-card-large">
+            <button class="modal-close" id="close-admin-btn">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">แผงควบคุมระบบลงทะเบียน (Admin Dashboard)</h3>
+                <p class="modal-subtitle">ข้อมูลการสมัครเรียนที่ถูกจัดเก็บในเครื่องเบราว์เซอร์ของคุณ (LocalStorage)</p>
+            </div>
+            
+            <!-- Connection Settings Section -->
+            <div class="admin-settings-box">
+                <h4 class="settings-box-title">⚙️ ตั้งค่าการเชื่อมต่อฐานข้อมูลภายนอก (Google Sheets API)</h4>
+                <p class="settings-box-desc">ป้อนลิงก์ Web App URL ที่ได้จากการ Deploy Google Apps Script เพื่อส่งข้อมูลการลงทะเบียนและสลิปเข้าสู่ Google Sheet และ Google Drive ของคุณโดยตรง</p>
+                <div class="settings-form-row">
+                    <input type="url" id="google-script-url-input" placeholder="https://script.google.com/macros/s/.../exec">
+                    <button class="btn btn-primary" id="save-script-url-btn">บันทึกและเชื่อมต่อ</button>
+                </div>
+                <div class="settings-status-row" style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <span>สถานะการเชื่อมต่อ: </span>
+                        <span id="connection-status-badge" class="badge-status badge-mock">จำลอง (Mock / LocalStorage)</span>
+                    </div>
+                    <div>
+                        <a href="https://github.com/learnthaiwithair/register/settings/pages" target="_blank" style="color: var(--accent-gold); font-size: 0.85rem; text-decoration: underline; font-weight: 500;">🔗 ไปยังหน้าตั้งค่า GitHub Pages</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-controls">
+                <button class="btn btn-danger" id="clear-data-btn">ล้างข้อมูลทั้งหมด</button>
+                <button class="btn btn-secondary" id="export-csv-btn">ส่งออกข้อมูลเป็น CSV</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>ชื่อ - นามสกุล</th>
+                            <th>ติดต่อ (อีเมล / โทร / Line)</th>
+                            <th>ประเทศ</th>
+                            <th>เป้าหมาย</th>
+                            <th>หลักฐาน (สลิป)</th>
+                            <th>วันเวลาที่สมัคร</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        <!-- Filled by JS -->
+                        <tr>
+                            <td colspan="7" class="text-center">ไม่มีข้อมูลผู้สมัครในขณะนี้</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
