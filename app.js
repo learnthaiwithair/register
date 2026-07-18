@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveScriptUrlBtn = document.getElementById('save-script-url-btn');
     const connectionStatusBadge = document.getElementById('connection-status-badge');
 
-    let googleScriptUrl = localStorage.getItem('ltwa_google_script_url') || '';
+    let googleScriptUrl = localStorage.getItem('ltwa_google_script_url') || 'https://script.google.com/macros/s/AKfycbwgiHizfeFQGnOEMSKSHXEb5vHYQ5PM077Ty9iOxRF_9CXsO24VNKk_SxMpb-6AS_D3cQ/exec';
 
     const updateConnectionStatus = () => {
         if (googleScriptUrlInput) {
